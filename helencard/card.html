@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			div.intro {
+				position: relative;
+				margin: 10px auto;
+				width: 600px;
+				background-color: #FFF;
+			}
+			div.container {
+				position: relative;
+				margin: 10px auto;
+				width: 450px;
+				height: 281px;
+				-webkit-perspective: 1000;
+			}
+			div.card {
+				width: 100%;
+				height: 100%;
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+				-webkit-transition: all 1s linear;
+				transition: all 1s linear;
+				-webkit-transform-origin: 0% 0%;
+				transform-origin: 0% 0%;
+				z-index:200;
+			}
+			div.face {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				background-color: #FFF;
+				z-index:200;
+			}
+			div.face.back {
+				display: block;
+				-webkit-transform: rotateX(180deg);
+				transform: rotateX(180deg);
+				box-sizing: border-box;
+				padding: 10px;
+				background-color: #FFF;
+			}
+			div.under {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left:0px;
+				background-color: #FFF;
+				top:0px;
+				display: block;
+				box-sizing: border-box;
+				z-index: 0;
+				box-shadow: 10px 10px 5px #888888;
+				padding:10%;
+			}
+			div.container:hover .card {
+				-webkit-transform: rotateX(180deg);
+				transform: rotateX(180deg);
+				box-shadow: 10px 10px 5px #888888;
+			}
+			body {
+				background-color: #DDF;
+			}
+			div.heart {
+				position: relative;
+				width: 100px;
+				height: 90px;
+			}
+			div.heart:before,
+			div.heart:after {
+				position: absolute;
+				content: "";
+				left: 50px;
+				top: 0;
+				width: 50px;
+				height: 80px;
+				background: red;
+				-moz-border-radius: 50px 50px 0 0;
+				border-radius: 50px 50px 0 0;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-transform-origin: 0 100%;
+				-moz-transform-origin: 0 100%;
+				-ms-transform-origin: 0 100%;
+				-o-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+			}
+			div.heart:after {
+				left: 0;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transform-origin: 100% 100%;
+				-moz-transform-origin: 100% 100%;
+				-ms-transform-origin: 100% 100%;
+				-o-transform-origin: 100% 100%;
+				transform-origin :100% 100%;
+			}
+			div.heart-container {
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				width:100%;
+				height:100%;
+			}
+			#heart1 {
+				position: absolute;
+				top:190px;
+				left:30px;
+			}
+			#heart2 {
+				position: absolute;
+				top:190px;
+				right:30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="intro">
+			<center>
+				<p>I made you some cards since your mail is dumb.</p>
+				<p>Hover over a card to open it.</p>
+			</center>
+		</div>
+		<div class="container">
+			<div class="under">
+				<p>Roses are red</p>
+				<p>Violets are blue</p>
+				<p>I made this from scratch</p>
+				<p>Because I love you</p>
+				<p>Love,<br/>Eric</p>
+			</div>
+			<div class="card" id="page1">
+				<div class="front face">
+					<center>
+						<h1>Happy Birthday</h1>
+						<h2>Helen</h2>
+					</center>
+				</div>
+				<div class="back face"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="under">
+				<p>I have no craft supplies</p>
+				<p>And this card is crazy</p>
+				<p>But we've been together 5 years</p>
+				<p>So 5 more maybe?</p>
+				<p>Love,<br/>Eric</p>
+			</div>
+			<div class="card" id="page2">
+				<div class="front face">
+					<div class="heart-container">
+						<div class="heart" id="heart1"></div>
+						<div class="heart" id="heart2"></div>
+					</div>
+					<center>
+						<h1>Happy <strike>Valentines Day</strike></h1>
+						<h1><strike>Anniversary</strike></h1>
+						<h2>The card that got lost in the mail</h2>
+					</center>
+				</div>
+				<div class="back face"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="under">
+				<center>
+					<a href="https://www.youtube.com/watch?v=YUKmq7UMJys">
+						<img src="http://cdn.uproxx.com/wp-content/uploads/2010/07/dead-dove-300x169.jpg"/>
+					</a>
+					<p>So brave...</p>
+				</center>
+			</div>
+			<div class="card" id="page3">
+				<div class="front face">
+					<center><h1>Dead Dove</h1></center>
+				</div>
+				<div class="back face"></div>
+			</div>
+		</div>
+	</body>
+</html>
